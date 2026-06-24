@@ -1,18 +1,22 @@
 # Pratham Panchal Family Hub
 
-Tech Stack
+Full-stack family portal built using:
 
 - Next.js
 - React
 - Tailwind CSS
 - Node.js
-- Express
+- Express.js
 - MongoDB
 
 Features
 
-- Family Website
-- YouTube Integration
-- Instagram Integration
-- Memories Timeline
-- Admin Dashboard
+- Family website
+- Admin dashboard
+- Gallery management
+- YouTube integration
+- Memories timeline
+
+Status
+
+Work in progress 🚀
