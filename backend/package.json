@@ -1,15 +1,12 @@
 {
   "name": "family-hub-backend",
-
   "version": "1.0.0",
-
   "main": "server.js",
 
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js",
-    "create-admin":"node scripts/createAdmin.js"
-
+    "create-admin": "node scripts/createAdmin.js"
   },
 
   "dependencies": {
@@ -18,7 +15,8 @@
     "dotenv": "^17.0.0",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.16.0"
+    "mongoose": "^8.16.0",
+    "multer": "^2.0.2"
   },
 
   "devDependencies": {
