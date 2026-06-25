@@ -7,6 +7,7 @@ const connectDB = require("./config/db");
 
 const authRoutes = require("./routes/authRoutes");
 const galleryRoutes = require("./routes/galleryRoutes");
+const adminRoutes = require("./routes/adminRoutes");
 
 const app = express();
 
@@ -29,6 +30,11 @@ app.use(
 app.use(
   "/api/gallery",
   galleryRoutes
+);
+
+app.use(
+  "/api/admin",
+  adminRoutes
 );
 
 app.get("/", (req, res) => {

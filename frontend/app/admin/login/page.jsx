@@ -4,6 +4,8 @@ import {useState} from "react";
 
 import api from "@/lib/api";
 
+import { useRouter } from "next/navigation";
+
 export default function AdminLogin(){
 
  const [username,setUsername]=useState("");
@@ -11,6 +13,9 @@ export default function AdminLogin(){
  const [password,setPassword]=useState("");
 
  const [message,setMessage]=useState("");
+
+ const router = useRouter();
+
 
  async function login(e){
 
@@ -36,6 +41,8 @@ export default function AdminLogin(){
     response.data.token
 
    );
+
+   router.push("/admin/dashboard");
 
    setMessage(
     "Login successful"

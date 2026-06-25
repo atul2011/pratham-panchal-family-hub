@@ -2,50 +2,46 @@ const Gallery=require(
  "../models/Gallery"
 );
 
-exports.upload=async(
- req,
- res
-)=>{
+exports.upload = async (req, res) => {
+  try {
 
- try{
+    console.log("BODY:", req.body);
+    console.log("FILE:", req.file);
 
-  const item=await Gallery.create({
+    const item = await Gallery.create({
+      title: req.body.title,
+      imageUrl: req.file.filename,
+    });
 
-   title:req.body.title,
+    console.log("SAVED:", item);
 
-   imageUrl:req.file.filename
+    res.json(item);
 
-  });
+  } catch (error) {
 
-  res.json(item);
+    console.error("UPLOAD ERROR:", error);
 
- }
-
- catch(error){
-
-  res.status(500).json({
-
-   message:error.message
-
-  });
-
- }
-
+    res.status(500).json({
+      message: error.message,
+    });
+  }
 };
 
-exports.getAll=async(
- req,
- res
-)=>{
+exports.getAll = async (req, res) => {
+  try {
 
- const data=
+    const data = await Gallery.find()
+      .sort({ createdAt: -1 });
 
- await Gallery.find()
+    res.json(data);
 
- .sort({
-  createdAt:-1
- });
+  } catch (error) {
 
- res.json(data);
+    console.error(error);
 
+    res.status(500).json({
+      message: error.message,
+    });
+
+  }
 };
